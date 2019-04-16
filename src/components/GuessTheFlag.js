@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PropTypes} from "react";
 import Options from './Options';
 import Flag from './Flag';
 import { connect } from "react-redux";
@@ -34,6 +34,7 @@ class GuessTheFlag extends React.Component{
     };
 
 
+
     handleOptionClick= () =>{
 
         // const options = getOptions();
@@ -43,6 +44,11 @@ class GuessTheFlag extends React.Component{
         // });
 
     };
+
+
+    // GuessTheFlag.proptypes = {
+    //
+    // };
 
     render() {
         return (
@@ -56,6 +62,8 @@ class GuessTheFlag extends React.Component{
         );
     }
 }
+
+
 
 /*Connect function can be thought of what replaces the observer in the
 * observer pattern or as a pub/sub patters. It subscribes to the redux store.
