@@ -6,8 +6,12 @@ import App from './App';
 import { Provider } from 'react-redux'
 import store from './store';
 import TestApp from "./TestApp";
+import {loadCountries} from "./actions";
 
 const rootElement = document.getElementById('root');
+
+//Load the countries when entering the application
+store.dispatch(loadCountries());
 
 /*
 * There are many ways of passing the store to all components,

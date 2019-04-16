@@ -1,3 +1,5 @@
+import * as types from '../actionTypes';
+
 /*
 * GUESS THE FLAG REDUCER
 * This reducer takes care of the part of the store that has to do directly with the gameplay
@@ -41,13 +43,15 @@ export default function guessTheFlag (state = [], action)  {
                  return { ...state, score: state.score + 1 }
             }
             else{
-                return state;
+                return {...state};
             }
             // //This is an example of how the child reducer would be called
             // return state.map(c =>
             //     options(c, action)
             // );
+        case types.LOAD_COUNTRIES_SUCCESS:
+            return action.countries;
         default:
-            return state;
+            return { ...state, countries: state.countries };
     }
 };
