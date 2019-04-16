@@ -24,7 +24,7 @@ import getScore from '../selectors';
     const Score = ({ score }) => (
         <div>
             <div>Score is: {score} </div>
-            {/*<div onClick={handleClick()}>Click here to print application state in the console </div>*/}
+            <div onClick={handleClick()}>Click here to print application state in the console </div>
             {/*{console.log(store.getState())}*/}
         </div>
     );
@@ -48,3 +48,4 @@ import getScore from '../selectors';
 // }
 
 export default connect(mapStateToProps)(Score);
+
