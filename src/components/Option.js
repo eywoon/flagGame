@@ -25,7 +25,7 @@ class Option extends React.Component{
         console.log(this.props.option);
         return(
             <div>
-                <li onClick={() => this.handleClick(this.props.option.choice)}>{this.props.option.country}</li>
+                <li onClick={() => this.handleClick(this.props.option.choice)}>{this.props.option.name}</li>
             </div>
         );
     }
