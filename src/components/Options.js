@@ -28,12 +28,12 @@ import store from '../store';
         <div>
             {console.log("FÉKK PROPS: " + store.getState())}
             <h2>Options</h2>
-            {/*<ul>*/}
+            <ul>
 
-                {/*{countries.map((country) => {*/}
-                {/*return <Option key={country.id} option={country}/>;*/}
-            {/*})}*/}
-            {/*</ul>*/}
+                {countries.map((country) => {
+                return <Option key={country.id} option={country}/>;
+            })}
+            </ul>
         </div>
     );
 
