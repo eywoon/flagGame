@@ -12,7 +12,7 @@ import {loadCountries} from "./actions";
 
 
 export default function TestApp(){
-    store.dispatch(loadCountries());
+    // store.dispatch(loadCountries());
 
     return(
         <div>

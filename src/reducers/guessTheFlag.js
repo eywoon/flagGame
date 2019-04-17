@@ -69,11 +69,9 @@ export default function guessTheFlag (state = [], action)  {
             //     options(c, action)
             // );
         case types.LOAD_COUNTRIES_SUCCESS:
-            console.log(action.countries);
-            return { ...state, countries: action.countries };
-        case types.REGION_FILTER_SET:
-            // return { ...state, filter: action.filter};
-            return {...state, filter: action.payload.filter};
+            // console.log(action.countries);
+            // return Object.assign([], state, action.countries);
+            return {...state, countries: action.countries};
         default:
             return state;
     }

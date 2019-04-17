@@ -40,6 +40,7 @@ import store from '../store';
     const Options = ({ options }) => (
         <div>
             <h2>Options</h2>
+            {/*{console.log("IN MAPPER " + options.countries)}*/}
             <ul>
                 {options.map((option) => {
                     return <Option key={option.id} option={option}/>;
@@ -62,12 +63,22 @@ import store from '../store';
 //         return {options};
 //     };
 
+const cleanOptions = filter =>{
+
+};
+
 const mapStateToProps = state => {
-    const options = getOptions(state);
+
+    const { filter } = state;
+    console.log("filterinn er " + filter);
+    // let options = getFilteredOptions(state, filter);
+    let options = getOptions(state);
+
+    console.log("in props" + options);
     // let options = getFilteredOptions(state);
     // const options = getCountryOptionsByFilter(state, 'Europe');
     // options = options.filter(countries => countries.region === 'Europe');
-    return {options};
+    return { options };
 };
 
     // function mapStateToProps(state, ownProps) {

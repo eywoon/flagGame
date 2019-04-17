@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import counter from './counter';
 // import todos from './todos';
 import guessTheFlag from './guessTheFlag';
+import filter from './filter';
 
 //renders the app to the DOM
 /*
@@ -17,4 +18,4 @@ import guessTheFlag from './guessTheFlag';
 * You can see the state shape if you look at the console
 * when the application starts
 * */
-export default combineReducers({ guessTheFlag, counter });
+export default combineReducers({ guessTheFlag, counter, filter });

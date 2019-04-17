@@ -5,7 +5,7 @@ import {CONTINENT_FILTERS} from "./constants";
 //held ég geti auðveldlega mappað inn í nýtt object hér ef ég vil
 
 export default function (store) {
-    console.log("Got to selector");
+    // console.log("Got to selector");
     return store.guessTheFlag.score;
 }
 
@@ -16,18 +16,16 @@ export const getScore = store => store.guessTheFlag.score;
 
 export const getOptions = store => store.guessTheFlag.countries;
 
-// export const getCountries = store =>
-//     getGameState(store).countries;
 
-// export const fyrstaLag = store =>
-//     getCountries(store).map(id => "bla");
 
 //Here we clean up the data by the filter
 export const getFilteredOptions = (store, regionFilter) => {
-    let allOptions = () => getOptions(store);
-    console.log("VAR BEÐIN UM AÐ FILTERA");
+    let allOptions = getOptions(store);
+    // console.log("VAR BEÐIN UM AÐ FILTERA");
     // console.log("ALLT: " + getOptions(store));
-    return allOptions.filter(countries => countries.region === 'Africa');
+    console.log("ALL options er: " + allOptions);
+    return allOptions;
+    // return allOptions.filter(countries => countries.region === 'Africa');
 
 
     // switch(regionFilter) {
