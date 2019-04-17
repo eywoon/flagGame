@@ -26,6 +26,28 @@ export const getFilteredOptions = (store, regionFilter) => {
     // console.log("ALL options er: " + allOptions);
     // return allOptions;
     // return allOptions.filter(countries => countries.region === 'Europe');
+
+    /*
+    * Það sem ég get gert hér næst:
+    * í staðinn fyrir að returna filteruðum country lista, skila honum sem
+    * nýju obecti sem lítur út eins og þau sem ég gerði áður.
+    * Senda það svo niður í Options og láta options sjá um að
+    * birta 4 í einu og uppfæra score þegar það þarf og setja einn random
+    * valkost sem réttan valkost
+    * */
+    let filteredOptions = allOptions.filter(countries => countries.region === regionFilter);
+    //skila þessum cleaned options
+    //kannski þarf ekki countreis.flag
+    // let cleanedOptions = {
+    //     country: filteredOptions.countries.name,
+    //     flag:filteredOptions.countries.flag,
+    //     choice: 'incorrect'
+    // };
+
+    console.log("FILTERING TESTING " + filteredOptions);
+
+
+    //Ath þessi return statement virkar
     return allOptions.filter(countries => countries.region === regionFilter);
 
 
