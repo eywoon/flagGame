@@ -27,6 +27,6 @@ const initialState = {
     counter: 0,
     todos: []
 };
-export default createStore(rootReducer, initialState, applyMiddleware(thunk));
+export default createStore(rootReducer, applyMiddleware(thunk));
 
 

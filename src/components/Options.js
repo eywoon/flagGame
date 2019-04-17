@@ -42,10 +42,10 @@ import store from '../store';
     const mapStateToProps = state => {
         //loadCountries er selector sem sækir filteraðan lista,
         //sem er filteraður á undan, þegar continent er valin
-        // const { visibilityFilter } = state;
-        // const options = getFilteredOptions(state, 'Europe');
+        const { visibilityFilter } = state;
+        const options = getFilteredOptions(state, visibilityFilter);
         // const options = getOptions(state);
-        const options = store.getState();
+        // const options = store.getState();
         console.log("options frá options " + options);
         return {options};
     };

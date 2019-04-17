@@ -31,7 +31,7 @@ export const clickOption =  choice => ({
 //correct options are loaded
 export const setRegionFilter = filter => ({
     type:types.REGION_FILTER_SET,
-    filter: { filter }
+    payload: { filter }
 });
 
 

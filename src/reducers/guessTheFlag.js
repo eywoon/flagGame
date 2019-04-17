@@ -73,7 +73,7 @@ export default function guessTheFlag (state = [], action)  {
             return { ...state, countries: action.countries };
         case types.REGION_FILTER_SET:
             // return { ...state, filter: action.filter};
-            return {...state, filter: action.filter};
+            return {...state, filter: action.payload.filter};
         default:
             return state;
     }
