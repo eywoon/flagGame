@@ -10,12 +10,20 @@ import thunk from 'redux-thunk';
    All reducers will be held in a single state object
  */
 
+//Kannski er filtered options óþarfi?
+
 //This is an outline of the application state shape
 const initialState = {
     guessTheFlag: {
         score:0,
-        countries: []
+        countries: [],
+        filteredOptions: {
+            id:0,
+            name:'None',
+            choice:'incorrect'
+        }
     },
+    filter: '',
     counter: 0,
     todos: []
 };

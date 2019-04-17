@@ -22,8 +22,16 @@ import * as types from './actionTypes';
 * in the flag
 * */
 export const clickOption =  choice => ({
-   type:'OPTION_CLICKED',
+   type:types.OPTION_CLICKED,
     correct: choice
+});
+
+
+//To update filters for when continent is chosen, this will mean
+//correct options are loaded
+export const setRegionFilter = filter => ({
+    type:types.REGION_FILTER_SET,
+    filter: { filter }
 });
 
 
@@ -57,20 +65,20 @@ export function loadCountriesSuccess(countries) {
 * Keep them here for now just for references
 * */
 
-let todoId = 0;
-
-export const incrementCounter = () => ({
-    type: 'INCREMENT'
-});
-
-export const decrementCounter = () => ({
-    type: 'DECREMENT'
-});
-
-export const addTodo = text => ({
-    type: 'ADD_TODO',
-    text: text,
-    id: todoId++
-});
+// let todoId = 0;
+//
+// export const incrementCounter = () => ({
+//     type: 'INCREMENT'
+// });
+//
+// export const decrementCounter = () => ({
+//     type: 'DECREMENT'
+// });
+//
+// export const addTodo = text => ({
+//     type: 'ADD_TODO',
+//     text: text,
+//     id: todoId++
+// });
 
 

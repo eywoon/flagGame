@@ -1,6 +1,6 @@
 import React from "react";
 import Counter from './components/Counter';
-import Todos from './components/Todos';
+// import Todos from './components/Todos';
 import store from './store'
 import GuessTheFlag from './components/GuessTheFlag';
 import Score from './components/Score';

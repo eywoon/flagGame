@@ -3,8 +3,9 @@ import Options from './Options';
 import Flag from './Flag';
 import { connect } from "react-redux";
 import store from '../store';
+import Continents from './Continents';
 
-import {getOptions, getFlag} from "../apis/staticApi";
+// import {getOptions, getFlag} from "../apis/staticApi";
 
 
 /*
@@ -19,9 +20,14 @@ class GuessTheFlag extends React.Component{
         super(props);
         this.state = {
             options: [],
-            flag:'NO FLAG'
+            flag:'NO FLAG',
+            regions: ['Europe', 'World', 'Asia', 'Ocenia', 'Americas', 'Africa'],
+            chosenRegion: 'None'
         };
     }
+
+    //HÉR ÞARF VÆNTANLEGA AÐ CONTINENT PICKER
+    //ath, continent er kallað regions
 
     /*
     * Í todolistanum er ekkert render fall í þessum topp klasa
@@ -31,6 +37,10 @@ class GuessTheFlag extends React.Component{
         // console.log(flag);
         // this.setState({flag : flag});
         // console.log(this.state.flag);
+        //Virðist virka rétt hér
+        // console.log("test, chosen region is: " + this.state.chosenRegion);
+        console.log("STATE: ");
+        console.log(store.getState());
     };
 
 
@@ -45,19 +55,58 @@ class GuessTheFlag extends React.Component{
 
     };
 
+    getOptionsByRegion(){
+        // return options;
+    }
+
+    // handleRegionClick = (region) => {
+    // //     // console.log("chosen region is: " + this.state.chosenRegion);
+    //     this.setState({
+    //         chosenRegion:region
+    //     });
+    //     console.log("callback, chosen region is: " + this.state.chosenRegion);
+    //     console.log("chosen region is: " + region);
+    //
+    //     this.setState({
+    //         options: this.getOptionsByRegion()
+    //     })
+    //
+    //
+    // };
 
     // GuessTheFlag.proptypes = {
     //
     // };
 
+
+    //kannski er betra að sækja rétt api köll hér og senda niður filteraðan lista?
+    //ég er eiginlega alveg viss um að það er best að senda listann niður héðan
+    //Rendera fyrst valmöguleikanum
+    //ég þarf í rauninni héðan að senda fjóra strípaða valmöguleika niður
+    //því ég vil vita á þessum panel hvaða fána ég á að nota
     render() {
         return (
             <div>
                 <h1>GUESS THE FLAG </h1>
+                <Continents />
+                {/*<div>*/}
+                    {/*Pick a region*/}
+                    {/*<ul>*/}
+                        {/*{this.state.regions.map((region) => {*/}
+                            {/*return <li onClick={this.handleRegionClick.bind(this, region)} >{region}</li>*/}
+                        {/*})}*/}
+                    {/*</ul>*/}
+                {/*</div>*/}
                 {/*<div onClick={this.handleOptionClick}>Press to get Options</div>*/}
-                {/*<div onClick={this.handleFlagClick}>Press to get Flag</div>*/}
-                <Flag flag={this.state.flag}/>
-                <Options options={this.state.options}/>
+                <div onClick={this.handleFlagClick}>Press to get Flag</div>
+
+                {/*<Flag flag={this.state.flag}/>*/}
+                {/*<Options options={this.state.options}/>*/}
+                {/*Gæti verið leið til þess að filter eftir regions,viljum ekki*/}
+                {/*senda allan listan niður heldur kalla á rétt region eftir þörfum*/}
+                {/*Í rauninni á ekki að loada þessu fyrr en region-ið er komið*/}
+                {/*<Options region={this.state.countries}/>*/}
+                <Options/>
             </div>
         );
     }

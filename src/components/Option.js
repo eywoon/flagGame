@@ -31,7 +31,10 @@ class Option extends React.Component{
     }
 }
 
-
+//TODO clickOption to be removed?
+//Þessi clickhandler á held ég að koma í gegnum props, s.s. clickOption á ekki
+//að vera referenced beint?
+//ÞARF að öllum líkindum EKKI að vera með connect function
 export default connect(
     null,
     {clickOption}

@@ -34,9 +34,28 @@ import * as types from '../actionTypes';
 // };
 
 
+//Reduces composition to simplify a more complex reducer
+// const regionFiltering = (state, action) => {
+//     console.log("I GOT TO REGION FILTERING");
+//     switch (action.type) {
+//         /*
+//         * Returns a new and filtered list of options depending on continent filtering
+//         * */
+//         case types.REGION_FILTER_SET:
+//             let options = [];
+//             //mappa í options út frá filter
+//             options.map(action.region)
+//             return options;
+//
+//         default:
+//             return state;
+//     }
+// };
+
+
 //The parent reducer in the reducer composition for the Guess the Flag game mode
 export default function guessTheFlag (state = [], action)  {
-    console.log("I GOT TO OPTION REDUCER");
+    // console.log("I GOT TO OPTION REDUCER");
     switch (action.type) {
         case 'OPTION_CLICKED':
             if(action.correct === 'correct'){
@@ -52,6 +71,9 @@ export default function guessTheFlag (state = [], action)  {
         case types.LOAD_COUNTRIES_SUCCESS:
             console.log(action.countries);
             return { ...state, countries: action.countries };
+        case types.REGION_FILTER_SET:
+            // return { ...state, filter: action.filter};
+            return {...state, filter: action.filter};
         default:
             return state;
     }
