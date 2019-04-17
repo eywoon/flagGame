@@ -43,7 +43,7 @@ import store from '../store';
             {/*{console.log("IN MAPPER " + options.countries)}*/}
             <ul>
                 {options.map((option) => {
-                    return <Option key={option.id} option={option}/>;
+                    return <Option key={option.name} option={option}/>;
                 })}
             </ul>
         </div>
@@ -63,18 +63,19 @@ import store from '../store';
 //         return {options};
 //     };
 
-const cleanOptions = filter =>{
-
-};
 
 const mapStateToProps = state => {
+    //ÞAÐ SEM VIRKAR FYRIR GETOPTIONS ER:
+    //  const options = getOptions(state);, með selectoor þannig að hann sæki guessTheFlag
+    // og reducer með Object assign
+    // þá virkar filter líka
 
     const { filter } = state;
-    console.log("filterinn er " + filter);
-    // let options = getFilteredOptions(state, filter);
-    let options = getOptions(state);
+    // console.log("filterinn er " + filter);
+    let options = getFilteredOptions(state, filter);
+    // const options = getOptions(state);
 
-    console.log("in props" + options);
+    // console.log("in props" + options);
     // let options = getFilteredOptions(state);
     // const options = getCountryOptionsByFilter(state, 'Europe');
     // options = options.filter(countries => countries.region === 'Europe');

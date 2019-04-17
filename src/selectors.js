@@ -14,7 +14,7 @@ export default function (store) {
 export const getScore = store => store.guessTheFlag.score;
 
 
-export const getOptions = store => store.guessTheFlag.countries;
+export const getOptions = store => store.guessTheFlag;
 
 
 
@@ -23,9 +23,10 @@ export const getFilteredOptions = (store, regionFilter) => {
     let allOptions = getOptions(store);
     // console.log("VAR BEÐIN UM AÐ FILTERA");
     // console.log("ALLT: " + getOptions(store));
-    console.log("ALL options er: " + allOptions);
-    return allOptions;
-    // return allOptions.filter(countries => countries.region === 'Africa');
+    // console.log("ALL options er: " + allOptions);
+    // return allOptions;
+    // return allOptions.filter(countries => countries.region === 'Europe');
+    return allOptions.filter(countries => countries.region === regionFilter);
 
 
     // switch(regionFilter) {

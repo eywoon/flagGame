@@ -70,8 +70,8 @@ export default function guessTheFlag (state = [], action)  {
             // );
         case types.LOAD_COUNTRIES_SUCCESS:
             // console.log(action.countries);
-            // return Object.assign([], state, action.countries);
-            return {...state, countries: action.countries};
+            return Object.assign([], state, action.countries);
+            // return {...state, countries: action.countries};
         default:
             return state;
     }
