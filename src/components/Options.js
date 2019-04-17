@@ -3,7 +3,7 @@ import Option from './Option';
 import { connect } from "react-redux";
 // import { getOptions } from '../apis/staticApi';
 import { loadCountries} from "../actions";
-import { getFilteredOptions, getOptions } from '../selectors';
+import {getCountryOptionsByFilter, getFilteredOptions, getOptions} from '../selectors';
 import store from '../store';
 
 /*
@@ -51,16 +51,24 @@ import store from '../store';
 
 
 
+// const mapStateToProps = state => {
+//         //loadCountries er selector sem sækir filteraðan lista,
+//         //sem er filteraður á undan, þegar continent er valin
+//         const { visibilityFilter } = state;
+//         const options = getFilteredOptions(state, visibilityFilter);
+//         // const options = getOptions(state);
+//         // const options = store.getState();
+//         console.log("options frá options " + options);
+//         return {options};
+//     };
+
 const mapStateToProps = state => {
-        //loadCountries er selector sem sækir filteraðan lista,
-        //sem er filteraður á undan, þegar continent er valin
-        const { visibilityFilter } = state;
-        const options = getFilteredOptions(state, visibilityFilter);
-        // const options = getOptions(state);
-        // const options = store.getState();
-        console.log("options frá options " + options);
-        return {options};
-    };
+    const options = getOptions(state);
+    // let options = getFilteredOptions(state);
+    // const options = getCountryOptionsByFilter(state, 'Europe');
+    // options = options.filter(countries => countries.region === 'Europe');
+    return {options};
+};
 
     // function mapStateToProps(state, ownProps) {
     //     // state = {cats: [{id:1, name: "Maru"}, etc.]}

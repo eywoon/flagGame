@@ -24,7 +24,7 @@ export const getOptions = store => store.guessTheFlag.countries;
 
 //Here we clean up the data by the filter
 export const getFilteredOptions = (store, regionFilter) => {
-    let allOptions = getOptions(store);
+    let allOptions = () => getOptions(store);
     console.log("VAR BEÐIN UM AÐ FILTERA");
     // console.log("ALLT: " + getOptions(store));
     return allOptions.filter(countries => countries.region === 'Africa');
