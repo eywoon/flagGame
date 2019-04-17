@@ -24,22 +24,34 @@ import store from '../store';
 //ATH, ég set aftur inn frekar selector eins og einfalda API sem sækir relevant
 //optionslista
 
-    const Options = ({ countries }) => (
+    // const Options = ({ countries }) => (
+    //     <div>
+    //         {console.log("FÉKK PROPS: " + store.getState())}
+    //         <h2>Options</h2>
+    //         <ul>
+    //
+    //             {countries.map((country) => {
+    //             return <Option key={country.id} option={country}/>;
+    //         })}
+    //         </ul>
+    //     </div>
+    // );
+
+    const Options = ({ options }) => (
         <div>
-            {console.log("FÉKK PROPS: " + store.getState())}
             <h2>Options</h2>
             <ul>
-
-                {countries.map((country) => {
-                return <Option key={country.id} option={country}/>;
-            })}
+                {options.map((option) => {
+                    return <Option key={option.id} option={option}/>;
+                })}
             </ul>
         </div>
     );
 
 
 
-    const mapStateToProps = state => {
+
+const mapStateToProps = state => {
         //loadCountries er selector sem sækir filteraðan lista,
         //sem er filteraður á undan, þegar continent er valin
         const { visibilityFilter } = state;
