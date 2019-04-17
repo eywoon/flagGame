@@ -25,13 +25,16 @@ class Option extends React.Component{
         console.log(this.props.option);
         return(
             <div>
-                <li onClick={() => this.handleClick(this.props.option.choice)}>{this.props.option.country}</li>
+                <li onClick={() => this.handleClick(this.props.option.choice)}>{this.props.option.name}</li>
             </div>
         );
     }
 }
 
-
+//TODO clickOption to be removed?
+//Þessi clickhandler á held ég að koma í gegnum props, s.s. clickOption á ekki
+//að vera referenced beint?
+//ÞARF að öllum líkindum EKKI að vera með connect function
 export default connect(
     null,
     {clickOption}
